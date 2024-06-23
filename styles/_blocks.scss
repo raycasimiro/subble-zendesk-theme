@@ -2,6 +2,10 @@
 /* Used in Homepage#categories and Community#topics */
 .blocks {
   &-list {
+    @include desktop {
+      gap: 24px;
+    }
+
     @include tablet {
       gap: 24px;
     }
@@ -19,13 +23,17 @@
     justify-content: space-between;
     padding: 24px;
     min-height: 280px;
+
+    @include desktop {
+      flex: 1 1 calc(33.333% - 24px);
+    }
     @include tablet {
-      // margin: 0 15px 30px;
+      flex: 1 1 calc(33.333% - 24px);
     }
 
-    @include mobile {
-      flex: 1 1 calc(100% - 24px);
-    }
+    // @include mobile {
+    //   flex: 1 1 calc(100% - 24px);
+    // }
 
     background-color: white;
     border: 1px solid #ddd;
@@ -34,7 +42,7 @@
     display: flex;
     flex: 1 0 340px;
     margin: 0 0 24px;
-    flex: 1 1 calc(33.333% - 24px);
+    flex: 1 1 calc(100% - 24px);
     align-items: flex-start;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
       rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
